@@ -9,12 +9,17 @@
 </head>
 
 <body style='margin : 0px; overflow: hidden;'>
+
+  
+
+
+
   <a-scene vr-mode-ui="enabled: false" embedded arjs='trackingMethod: best; detectionMode: mono_and_matrix; matrixCodeType: 5x5; debugUIEnabled: false; sourceType: webcam; sourceWidth:1920; sourceHeight:1080; displayWidth: 1920; displayHeight: 1080;'>
     <a-assets>
       <a-asset-item id="house" src="./assets/Pitch-AR2.gltf"></a-asset-item>
     </a-assets>
     
-    <a-marker-camera id="rig" type='pattern' url='pattern-MoehrleMarker2.patt'
+    <a-marker-camera id="rig" type='pattern' url='pattern-images-7.patt'
       smooth='true'
       smoothThreshold='2'
       smoothTolerance='0.01'
@@ -22,11 +27,26 @@
 
       size='0.05'
     >
-      <a-entity scale='0.35 0.35 0.35'  position='0 0 0' gltf-model="#house" animation-mixer/>
-      
-    </a-marker-camera>
+      <a-entity id="cube" position="0 0.5 0"  geometry="primitive: box;" material="color: blue">
+        <script>
+          // Get current date and time
+          var now = new Date();
+          var datetime = now.getHours().toLocaleString();
+          // Insert date and time into HTML
+          //document.getElementById("datetime").innerHTML = datetime;
+          if(datetime >= 19 || datetime <= 6) {
+            document.getElementById("cube").setAttribute('material', 'color', 'lightgray');
+          }
+          if(datetime > 6 && datetime < 19) {
+            document.getElementById("cube").setAttribute('material', 'color', 'gray');
+          }
+          </script>
+      </a-entity>
 
+    </a-marker-camera>
+    
   </a-scene>
+  
 </body>
 
 <!--
@@ -48,7 +68,11 @@
   high contrast
   rotationally asymmetrical marker
   white/bright border half the black border thickness
+  border 25%
 
 <a-marker-camera id="rig" type='pattern' url='pattern-MoehrleMarker.patt'
+
+      <a-entity scale='0.35 0.35 0.35'  position='0 0 0' gltf-model="#house" animation-mixer/>
+
 
 -->
