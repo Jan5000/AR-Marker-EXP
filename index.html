@@ -20,14 +20,20 @@
     <a-entity light="type: directional; color: #D9F3FF; intensity: 2" position="0.5 -1 -1"></a-entity>
     <a-entity light="type: directional; color: #FFF; intensity: 1" position="1 1 -1"></a-entity>
 
+    <!-- <a-entity light="type: ambient; color: #FFF; intensity: 0.5"></a-entity>
+    <a-entity light="type: directional; color: #FFF5D9; intensity: 0.5" position="-0.5 1 1"></a-entity>
+    <a-entity light="type: directional; color: #D9F3FF; intensity: 0.5" position="0.5 -1 -1"></a-entity>
+    <a-entity light="type: directional; color: #FFF; intensity: 0.5" position="1 1 -1"></a-entity> -->
+
+
     <a-assets>
       <a-asset-item id="house" src="./assets/Pitch-AR4.gltf"></a-asset-item>
     </a-assets>
     
     <a-marker-camera id="rig" type='pattern' url='pattern-images-7.patt'
       smooth='true'
-      smoothThreshold='4'
-      smoothTolerance='0.1'
+      smoothThreshold='2'
+      smoothTolerance='0.01'
       smoothCount='20'
 
       size='0.05'
