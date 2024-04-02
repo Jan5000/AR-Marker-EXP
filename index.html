@@ -26,14 +26,14 @@
     
     <a-marker-camera id="rig" type='pattern' url='pattern-images-7.patt'
       smooth='true'
-      smoothThreshold='2'
-      smoothTolerance='0.01'
-      smoothCount='10'
+      smoothThreshold='4'
+      smoothTolerance='0.1'
+      smoothCount='20'
 
       size='0.05'
     >
     
-    <a-entity id="cube" scale='1 1 1'  position='0 0 0' gltf-model="#house" animation-mixer/>
+    <a-entity id="cube" scale='2 2 2'  position='0 0 0' gltf-model="#house" animation-mixer/>
         <script>
           // Get current date and time
           var now = new Date();
