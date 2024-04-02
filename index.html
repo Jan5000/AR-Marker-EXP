@@ -15,9 +15,13 @@
 
   <a-scene vr-mode-ui="enabled: false" embedded arjs='debugUIEnabled: false; sourceType: webcam;'>
    
-    
+    <a-entity light="type: ambient; color: #FFF; intensity: 2"></a-entity>
+    <a-entity light="type: directional; color: #FFF5D9; intensity: 3" position="-0.5 1 1"></a-entity>
+    <a-entity light="type: directional; color: #D9F3FF; intensity: 2" position="0.5 -1 -1"></a-entity>
+    <a-entity light="type: directional; color: #FFF; intensity: 1" position="1 1 -1"></a-entity>
+
     <a-assets>
-      <a-asset-item id="house" src="./assets/Pitch-AR3.gltf"></a-asset-item>
+      <a-asset-item id="house" src="./assets/Pitch-AR4.gltf"></a-asset-item>
     </a-assets>
     
     <a-marker-camera id="rig" type='pattern' url='pattern-images-7.patt'
@@ -29,7 +33,7 @@
       size='0.05'
     >
     
-    <a-entity id="cube" scale='0.35 0.35 0.35'  position='0 0 0' gltf-model="#house" animation-mixer/>
+    <a-entity id="cube" scale='1 1 1'  position='0 0 0' gltf-model="#house" animation-mixer/>
         <script>
           // Get current date and time
           var now = new Date();
