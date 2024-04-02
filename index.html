@@ -21,7 +21,13 @@
       <a-asset-item id="house" src="./assets/Pitch-AR2.gltf"></a-asset-item>
     </a-assets>
     
-    <a-marker-camera id="rig" preset='hiro'
+    <a-marker-camera id="rig" type='pattern' url='pattern-images-7.patt'
+      smooth='true'
+      smoothThreshold='2'
+      smoothTolerance='0.01'
+      smoothCount='10'
+
+      size='0.05'
     >
     
       <a-entity id="cube" position="0 0.5 0"  geometry="primitive: box;" material="color: blue">
@@ -71,13 +77,5 @@
 
       <a-entity scale='0.35 0.35 0.35'  position='0 0 0' gltf-model="#house" animation-mixer/>
 
-    <a-marker-camera id="rig" preset='hiro'
-      smooth='true'
-      smoothThreshold='2'
-      smoothTolerance='0.01'
-      smoothCount='10'
-
-      size='0.05'
-    >
 
 -->
