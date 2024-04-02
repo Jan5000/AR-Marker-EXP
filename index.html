@@ -15,11 +15,13 @@
 
 
   <a-scene vr-mode-ui="enabled: false" embedded arjs='trackingMethod: best; detectionMode: mono_and_matrix; matrixCodeType: 5x5; debugUIEnabled: false; sourceType: webcam; sourceWidth:1920; sourceHeight:1080; displayWidth: 1920; displayHeight: 1080;'>
+   
+    
     <a-assets>
       <a-asset-item id="house" src="./assets/Pitch-AR2.gltf"></a-asset-item>
     </a-assets>
     
-    <a-marker-camera id="rig" type='pattern' url='pattern-images-7.patt'
+    <a-marker-camera id="rig" preset='hiro'
       smooth='true'
       smoothThreshold='2'
       smoothTolerance='0.01'
@@ -27,6 +29,7 @@
 
       size='0.05'
     >
+    
       <a-entity id="cube" position="0 0.5 0"  geometry="primitive: box;" material="color: blue">
         <script>
           // Get current date and time
@@ -35,14 +38,14 @@
           // Insert date and time into HTML
           //document.getElementById("datetime").innerHTML = datetime;
           if(datetime >= 19 || datetime <= 6) {
-            document.getElementById("cube").setAttribute('material', 'color', 'lightgray');
+            document.getElementById("cube").setAttribute('material', 'color', 'blue');
           }
           if(datetime > 6 && datetime < 19) {
-            document.getElementById("cube").setAttribute('material', 'color', 'gray');
+            document.getElementById("cube").setAttribute('material', 'color', 'red');
           }
           </script>
       </a-entity>
-
+        
     </a-marker-camera>
     
   </a-scene>
